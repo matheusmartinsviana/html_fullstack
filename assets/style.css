@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-family: monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* basic html */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & ul {
+        margin-top: 15px;
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+.form,
+.hours-table,
+.favorite-websites {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+}
+
+.hours-table {
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+        background: -webkit-linear-gradient(#ff5100, #ff7300c2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    & table {
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        &,
+        th,
+        td {
+            text-align: left;
+            padding: 10px;
+        }
+    }
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & input {
+        background-color: rgb(245, 245, 245);
+        padding: 10px;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all ease-in-out .2s;
+        border: none;
+
+        &:hover {
+            background-color: rgba(245, 245, 245, 0.685);
+        }
+    }
+}
+
+/* end basic html */
+
+/* index.html */
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    & ul li a {
+        background: rgb(1, 78, 109);
+        color: rgb(216, 216, 216);
+        display: flex;
+        padding: 9px;
+        margin: 9px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        transition: all ease-in-out .2s;
+
+        &:hover {
+            background-color: rgba(13, 75, 99, 0.938);
+        }
+
+    }
+}
+
+/* end index.html */
+
+/* flex.html */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 20px;
+}
+
+.movie-item {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px rgb(233, 233, 233);
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform ease-in-out .3s;
+
+    & p {
+        font-weight: 900;
+    }
+
+    & figure img {
+        width: 200px;
+        height: auto;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        backface-visibility: hidden;
+    }
+}
