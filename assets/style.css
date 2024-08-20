@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     text-decoration: none;
     list-style: none;
     color: black;
@@ -24,6 +22,14 @@ html {
         display: flex;
         width: 100%;
         justify-content: space-around;
+
+        & li:hover {
+            font-weight: 800;
+        }
+
+        & li:active {
+            font-weight: 900;
+        }
     }
 }
 
@@ -71,6 +77,26 @@ html {
 
         &:hover {
             background-color: rgba(245, 245, 245, 0.685);
+        }
+    }
+}
+
+#modal {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    & button {
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+
+        &:hover {
+            background-color: #222;
         }
     }
 }
