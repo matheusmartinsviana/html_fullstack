@@ -12,7 +12,7 @@
 <body>
     <a style="position: fixed; top: 0; left: 0; padding: 5px; margin: 10px; border-radius: 4px; color: white; background-color: black;"
         href="index.html">Back to menu</a>
-    <header>
+    <header id="header">
         <nav class="nav">
             <ul>
                 <li><a href="#form">Simple form</a></li>
@@ -23,11 +23,12 @@
     </header>
 
     <section class="form">
-        <form action="#" id="form">
+        <form action="#" id="forms">
             <label for="Simple Form">Just a simple forms</label>
             <input type="text" name="name" id="name" placeholder="Write your name">
             <input type="text" name="course" id="course" placeholder="Write your course">
             <input type="number" name="number" id="number" placeholder="Write a year">
+            <button type="submit">Enviar</button>
         </form>
         <figure>
             <img src="images/html.png" alt="here gonna have a image" height="auto" width="300">
@@ -77,6 +78,26 @@
     <footer style="display: flex; align-items: center; justify-content: center; margin: 20px;">
         <a href="https://github.com/matheusmartinsviana">&copy;Matheus Martins Viana 2024</a>
     </footer>
+
+    <script>
+        const header = document.querySelector('#header');
+        const h1 = document.createElement('h1')
+        h1.textContent = "click here"
+        document.body.append(h1)
+        h1.addEventListener('click', () => {
+            h1.style.color = 'red';
+            setTimeout(() => {
+                h1.style.color = 'black';
+            }, 100)
+        })
+
+        const forms = document.querySelector('#forms');
+        forms.addEventListener('submit', () => {
+            
+        })
+
+    </script>
+
 </body>
 
 </html>

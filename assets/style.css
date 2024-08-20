@@ -42,12 +42,6 @@ html {
     display: flex;
     flex-direction: column;
 
-    & h2 {
-        background: -webkit-linear-gradient(#ff5100, #ff7300c2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
     & table {
         border-collapse: collapse;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
