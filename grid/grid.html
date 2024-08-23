@@ -1,17 +1,203 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
-    <title>Using grid</title>
+    <title>Grid Layout Example</title>
+    <style>
+        .item1 {
+            grid-area: header;
+        }
+
+        .item1 ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item1 ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .item1 ul li a:hover {
+            color: white;
+            background-color: gray;
+            border-radius: 5px;
+        }
+
+        .item2 {
+            grid-area: menu;
+        }
+
+        .item3 {
+            grid-area: main;
+        }
+
+        .item4 {
+            grid-area: right;
+        }
+
+        .item5 {
+            grid-area: footer;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            gap: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-areas:
+                    'header'
+                    'menu'
+                    'main'
+                    'right'
+                    'footer';
+            }
+
+            .item1 ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        #item-6:hover .code-used {
+            display: block;
+            margin-top: 10px;
+            background-color: #aaaaaa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .code-used {
+            display: none;
+            white-space: pre-wrap;
+            text-align: left;
+            position: absolute;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <a style="position: fixed; top: 0; left: 0; padding: 5px; margin: 10px; border-radius: 4px; color: white; background-color: black;"
-        href="../index.html">Back to menu</a>
+    <div class="grid-container">
+        <header class="item1">
+            <ul>
+                <li>
+                    <a href="#" id="item-1">Menu</a>
+                </li>
+                <li>
+                    <a href="#" id="item-2">Main</a>
+                </li>
+                <li>
+                    <a href="#" id="item-4">Section</a>
+                </li>
+                <li>
+                    <a href="#" id="item-3">Footer</a>
+                </li>
+                <li>
+                    <a href="#" id="item-6">Grid Template
+                        <code class="code-used">
+                            grid-template-areas:
+                                'header header header header header header'
+                                'menu main main main right right'
+                                'menu footer footer footer footer footer';
+                        </code>
+                    </a>
+                </li>
+            </ul>
+        </header>
 
+        <section class="item2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia voluptate beatae laboriosam rem
+                voluptates, dolorem numquam, dolorum illum, et repudiandae expedita perspiciatis quae asperiores ipsam
+                sint. Culpa fuga voluptate eligendi!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum animi quisquam dicta dolor aspernatur
+                nobis officia eveniet dolores explicabo sit at, quo est delectus quis ducimus rerum architecto vel eum.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias repellat voluptatum similique
+                molestiae, veniam saepe necessitatibus mollitia voluptas cumque deserunt accusamus iste. Necessitatibus
+                cum unde ad officiis dolores repellat nesciunt!</p>
+        </section>
+
+        <main class="item3">
+            <p>You know how we can create responsive design with display grid?</p>
+            <img src="//picsum.photos/200/200" alt="Random Image">
+        </main>
+        <section class="item4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quos quibusdam in deserunt quas
+                obcaecati temporibus aliquam reprehenderit itaque totam. Ullam officiis eius ducimus veniam? Totam odit
+                nobis ratione! Esse?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui est deserunt nesciunt dolores pariatur et
+                mollitia omnis, molestiae quidem voluptatum quasi natus sint porro. Similique eum sit odio. Obcaecati,
+                atque.</p>
+        </section>
+        <footer class="item5">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati sapiente et animi error corrupti,
+                sint nihil neque iusto repudiandae accusantium exercitationem porro quam illum corporis dolor vero ad
+                non? Ex.</p>
+        </footer>
+    </div>
+
+    <script>
+        const item1 = document.querySelector("#item-1");
+        const item2 = document.querySelector("#item-2");
+        const item3 = document.querySelector("#item-3");
+        const item4 = document.querySelector("#item-4");
+        const menu = document.querySelector(".item2");
+        const main = document.querySelector(".item3");
+        const footer = document.querySelector(".item5");
+        const section = document.querySelector(".item4");
+
+        item1.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetBackgrounds();
+            menu.style.background = "red";
+        });
+
+        item2.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetBackgrounds();
+            main.style.background = "blue";
+        });
+
+        item3.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetBackgrounds();
+            footer.style.background = "green";
+        });
+
+        item4.addEventListener("click", (e) => {
+            e.preventDefault();
+            resetBackgrounds();
+            section.style.background = "yellow";
+        });
+
+        function resetBackgrounds() {
+            menu.style.background = "";
+            main.style.background = "";
+            footer.style.background = "";
+            section.style.background = "";
+        }
+    </script>
 </body>
 
 </html>
