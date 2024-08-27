@@ -1,0 +1,22 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.title-message {
+    font-size: 3rem;
+    animation: writing 5s normal;
+}
+
+@keyframes writing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 350px;
+    }
+}
