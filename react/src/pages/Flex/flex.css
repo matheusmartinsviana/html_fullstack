@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movies {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 20px;
+}
+
+.movie-item {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid 1px rgb(233, 233, 233);
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform ease-in-out .3s;
+
+    & p {
+        font-weight: 900;
+    }
+
+    & figure img {
+        width: 200px;
+        height: auto;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        backface-visibility: hidden;
+    }
+}
