@@ -10,6 +10,7 @@ const Header: React.FC = () => {
             <Link to="/grid">Grid</Link>
             <Link to="/flex">Flex</Link>
             <Link to="/todolist">Todo List</Link>
+            <Link to="/api">API Rick and Morty</Link>
         </header>
     )
 }

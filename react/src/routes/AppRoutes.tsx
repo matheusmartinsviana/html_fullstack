@@ -6,6 +6,7 @@ import Grid from "../pages/Grid/Grid.tsx"
 import TodoList from "../pages/TodoList/TodoList.tsx"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import React from "react"
+import Character from "../pages/Character/Character.tsx"
 
 const AppRoutes: React.FC = () => (
     <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRoutes: React.FC = () => (
                 <Route path='/flex' element={<Flex />} />
                 <Route path='/grid' element={<Grid />} />
                 <Route path='/todolist' element={<TodoList />} />
+                <Route path='/api' element={<Character />} />
             </Route>
         </Routes>
     </BrowserRouter>

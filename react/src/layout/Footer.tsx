@@ -27,6 +27,11 @@ const Footer: React.FC = () => {
                         <li>Todo List</li>
                     </Link>
                 </ul>
+                <ul>
+                    <Link to="/api">
+                        <li>Rick and Morty API</li>
+                    </Link>
+                </ul>
             </section>
         </footer>
     )
